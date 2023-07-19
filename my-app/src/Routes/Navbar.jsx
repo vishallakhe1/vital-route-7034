@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import logo from "../../src/Logo.png";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import { Button } from "@chakra-ui/react";
-import { AuthContext } from "../Context/AuthContextProvider";
-
+// import { AuthContext } from "../Context/AuthContextProvider"
+import AuthContextProvider from "../Context/AuthContextProvider";
 
 const Navbar = () => {
 
@@ -17,7 +17,7 @@ const Navbar = () => {
         { to: "/Products", text: "Products" },
         { to: "/ShoppingCart", text: "ShoppingCart" },
         { to: "/Login", text: "Login" },
-        { to: "/SignUp", text: "SignUp" },
+        { to: "/SignUp", text: "SignUp" }
       ];
 
 }
