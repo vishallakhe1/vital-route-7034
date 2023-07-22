@@ -10,6 +10,7 @@ import {
   Button,
   Link,
   Text,
+  Flex
 } from "@chakra-ui/react";
 
 
@@ -58,22 +59,24 @@ export default function Login() {
         Login
       </Heading>
       <form onSubmit={handleSubmit}>
-        <FormControl id="email" isRequired>
-          <FormLabel>Email address</FormLabel>
-          <Input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </FormControl>
-        <FormControl id="password" isRequired mt="4">
-          <FormLabel>Password</FormLabel>
-          <Input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </FormControl>
+        <Flex justifyContent="space-between">
+          <FormControl id="email" isRequired>
+            <FormLabel>Email address</FormLabel>
+            <Input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </FormControl>
+          <FormControl id="password" isRequired>
+            <FormLabel>Password</FormLabel>
+            <Input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </FormControl>
+        </Flex>
         <Button
           colorScheme="teal"
           type="submit"
@@ -88,7 +91,7 @@ export default function Login() {
           <Link
             to="/signup"
             onClick={() => navigate("/signup", { state: { from: "/login" } })}
-            color='blue'
+            color="blue"
           >
             Click here to signup.
           </Link>
